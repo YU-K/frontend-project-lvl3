@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/YU-K/frontend-project-lvl3/issues"
   },
-  "type": "module",
   "jest": {
     "testEnvironment": "node",
     "transform": {},
@@ -30,12 +29,23 @@
   "homepage": "https://github.com/YU-K/frontend-project-lvl3#readme",
   "devDependencies": {
     "@jest/globals": "^26.6.2",
+    "css-loader": "^5.2.2",
     "eslint": "^7.24.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.3.5",
+    "html-webpack-plugin": "^5.3.1",
     "jest": "^26.6.3",
     "jest-circus": "^26.6.3",
-    "jest-cli": "^26.6.3"
+    "jest-cli": "^26.6.3",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.0-beta3",
+    "jquery": "^3.6.0"
   }
 }

@@ -1,3 +1,6 @@
+develop:
+	npx webpack serve
+	
 install: install-deps
 
 run:
@@ -5,6 +8,10 @@ run:
 
 install-deps:
 	npm ci
+
+build:
+	# rm -rf dist
+	NODE_ENV=production npx webpack
 
 test:
 	npm test
