@@ -10,7 +10,7 @@ install-deps:
 	npm ci
 
 build:
-	# rm -rf dist
+	
 	NODE_ENV=production npx webpack
 
 test:
