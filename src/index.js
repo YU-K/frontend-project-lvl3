@@ -42,13 +42,15 @@ const createForm = () => {
 };
 
 const createMainBlock = () => {
+  const main = document.createElement("main");
+  const section = document.createElement("section");
   const row = document.createElement("div");
   const col = document.createElement("div");
   const h1 = document.createElement("h1");
   const p = document.createElement("p");
   const example = document.createElement("p");
   const pText = document.createTextNode(
-    "Начните читать RSS сегодня! Это легко это красиво."
+    "Начните читать RSS сегодня! Это легко, это красиво."
   );
   const h1Text = document.createTextNode("RSS агрегатор");
   const exampleText = document.createTextNode(
@@ -56,6 +58,7 @@ const createMainBlock = () => {
   );
   const form = createForm();
 
+  section.classList.add("container-fluid", "bg-dark", "p-5");
   row.classList.add("row");
   col.classList.add("col-md-10", "col-lg-8", "mx-auto", "text-white");
   h1.classList.add("display-3");
@@ -73,17 +76,47 @@ const createMainBlock = () => {
 
   row.appendChild(col);
 
-  return row;
+  section.appendChild(row);
+  main.appendChild(section);
+
+  return main;
 };
 
-const createContainer = () => {
-  const container = document.createElement("section");
+const createFooter = () => {
+  const footer = document.createElement("footer");
+  const div = document.createElement("div");
+  const span = document.createElement("span");
+  const text = document.createTextNode("created by ");
+  const link = document.createElement("a");
+  const linkText = document.createTextNode("Yuriy Katkov");
 
-  container.classList.add("container-fluid", "bg-dark", "p-5");
+  link.setAttribute("href", "https://github.com/YU-K");
 
-  container.appendChild(createMainBlock());
+  link.classList.add("text-decoration-none");
+  div.classList.add("container", "text-center");
+  footer.classList.add(
+    "footer",
+    "position-absolute",
+    "border-top",
+    "py-3",
+    "start-0",
+    "end-0",
+    "bottom-0",
+    "mt-5"
+  );
+  span.classList.add("text-muted");
 
-  return container;
+  link.appendChild(linkText);
+  span.appendChild(text);
+  span.appendChild(link);
+  div.appendChild(span);
+  footer.appendChild(div);
+
+  return footer;
 };
 
-document.body.appendChild(createContainer());
+const main = createMainBlock();
+const footer = createFooter();
+
+document.body.appendChild(main);
+document.body.appendChild(footer);

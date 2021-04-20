@@ -20,7 +20,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPLugin({
-      title: "Rss agregator",
+      title: "RSS agregator",
     }),
   ],
   output: {
